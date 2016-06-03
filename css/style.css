@@ -1,0 +1,45 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+body {overflow:hidden; cursor:crosshair;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;   
+  
+  font-family: 'Press Start 2P', cursive;
+
+}
+* {margin:0; padding:0;}
+#main {width:100vw; background:url(../images/space.jpg) repeat; height:100vh; position:relative;}
+#leftbox {width:100px; height:800vh; background:url(../images/leftbg.jpg) repeat; position:absolute; right:0; border-left:5px solid rgba(41,41,41,0.81);}
+#leftbox:hover {cursor:url(../images/shippp.png) 20 20, pointer;}
+.ball { position:absolute; top:0;  opacity:0.7}
+.ball img{}
+#counter {color:rgba(255,255,255,0.70); font-size:20px; position:absolute; top:20px; left:20px;}
+.laser {position:absolute;  width:100px; height:10px;  background:rgba(255,0,4,0.79); box-shadow:10px 10px 50px rgba(255,174,0,0.84); border-radius:50px;}
+#wrap {}
+#cursor {
+  position  : absolute;
+  z-index   : 10000;
+  width     : 40px;
+  height    : 40px;
+  background: transparent url(../images/shipppa.gif) 0 0 no-repeat;
+}
+.newcurs{cursor:url(images/shippp2.gif) 20 20, pointer;}
+.gameTitle {font-size:2em; display:none;color:white; position:absolute;bottom:5%; left:80%; margin-left:-200px; margin-top:-200px; width:400px; z-index:9999;}
+.gameCreator {font-size:0.5em; display:none;color:white; position:absolute;bottom:3%; left:80%; margin-left:-200px; margin-top:-200px; width:400px; z-index:9999;}
+.help {line-height:23px;color:white; background:rgba(64,211,28,0.72); border-radius:30px; width:200px; height:70px; position:absolute; padding:30px; top:100px; right:120px; z-index:9999; display:none;}
+.help:after {  content: ' ';
+  position: absolute;
+	
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 50px solid rgba(64,211,28,0.72);
+  left: 260px;
+  top: 36px;
+  z-index:9999;
+  }
