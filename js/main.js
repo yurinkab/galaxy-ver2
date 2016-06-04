@@ -5,7 +5,19 @@
   	
       var counter = 0;
 	
+	var times = 60;
 
+  function time (){
+	  var main = document.getElementById("timer");
+	  main.innerHTML = times;
+	  times--;
+	  if(times < 10) {
+
+		  $("#timer").css({color:"red"});
+	  }
+  }
+	time();
+  setInterval(time,1000);
 
   
   //Shooting
@@ -24,8 +36,8 @@
 		  laser.className = "laser";
 		  laser.setAttribute("style","top:"+y+";left:"+x+";")
 		  document.body.appendChild(laser);
-		  laserH = laser.offsetHeight;
-		  laserW = laser.offsetWidth;
+		  laserH = laser.getBoundingClientRect().height;
+		  laserW = laser.getBoundingClientRect().width;
 		  
 		  
 		  //velocity - progress
@@ -33,8 +45,8 @@
 			  duration: 1000,
 	  easing: "linear",
 	  progress: function(elements, complete, remaining, start, tweenValue) {
-		  laserx = laser.offsetLeft;
-		  lasery = laser.offsetTop;
+		  laserx = laser.getBoundingClientRect().left;
+		  lasery = laser.getBoundingClientRect().top;
         console.log((complete * 100) + "%");
         console.log(remaining + "ms remaining!");
 		console.log("the laser offsetLeft pixels are: " + laserx);
@@ -43,14 +55,33 @@
 		//Collision Detection
 	for(i=0; i < ufoarr.length ;i++) {
 		var current = ufoarr[i];
-		currentx = current.offsetTop;
-		currenty = current.offsetLeft;
+		currenty = current.offsetTop;
+		currentx = current.offsetLeft;
+		currentW = current.offsetWidth;
+		currentH = current.offsetHeight;
 		console.log("ufo left: " + currentx + ". ufo top: " + currenty);
-		if (laserx < current.offsetLeft + current.offsetWidth &&
-   laserx + laserW > current.offsetLeft &&
-   lasery < current.offsetTop - 20 + current.offsetHeight + 20 &&
-   laserH + lasery > current.offsetTop) {
-	   
+
+		//start of collision detector
+/*		if ((lasery + laserH) < (currenty) ||
+			(lasery > (currenty + currentH)) ||
+			((laserx + laserW) < currentx) ||
+			(laserx > (currentx + currentW)))*/
+		if (laserx < currentx + currentW &&
+   laserx + laserW > currentx &&
+   lasery < currenty + currenty &&
+   laserH + lasery > currentH)
+
+	/*	if (
+				laserx < currentx + currentW &&
+				lasery > currenty &&
+				lasery < currenty + currentH
+		)*/
+
+/*
+		if(laserx+laserW > currentx && laserx < currentx + currentW && lasery > currenty && lasery < currenty + currentH)
+*/
+		{
+	   //do this
 	  var showScore = document.getElementById("counter");
 	  showScore.textContent = counter;
 		counter++;

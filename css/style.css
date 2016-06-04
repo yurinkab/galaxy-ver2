@@ -17,7 +17,8 @@ body {overflow:hidden; cursor:crosshair;
 #leftbox:hover {cursor:url(../images/shippp.png) 20 20, pointer;}
 .ball { position:absolute; top:0;  opacity:0.7}
 .ball img{}
-#counter {color:rgba(255,255,255,0.70); font-size:20px; position:absolute; top:20px; left:20px;}
+#counter {color:rgba(140,270,100,1); font-size:20px; position:absolute; top:20px; left:20px;}
+#timer {color:rgba(255,255,255,0.70); font-size:20px; position:absolute; top:45px; left:20px;}
 .laser {position:absolute;  width:100px; height:10px;  background:rgba(255,0,4,0.79); box-shadow:10px 10px 50px rgba(255,174,0,0.84); border-radius:50px;}
 #wrap {}
 #cursor {
